@@ -1,0 +1,5 @@
+package com.trainings.autowire;
+
+public class Mobile {
+
+}

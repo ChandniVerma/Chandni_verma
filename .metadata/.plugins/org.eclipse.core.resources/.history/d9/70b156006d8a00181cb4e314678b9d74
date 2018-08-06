@@ -1,0 +1,5 @@
+package com.training.interfaces;
+
+public class IEmployeeDAO {
+
+}

@@ -1,0 +1,9 @@
+package com.trainings.profile;
+
+import org.springframework.context.annotation.Configuration;
+
+//this can be even done with xml
+@Configuration
+public class AppConfig {
+
+}

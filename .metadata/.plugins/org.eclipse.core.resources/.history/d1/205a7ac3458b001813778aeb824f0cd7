@@ -1,0 +1,40 @@
+package com.training.exilant.restfulworks.user1;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserResource {
+	
+	@Autowired
+	private UserDAOService userDAOService;
+	
+	
+	@GetMapping("/users")
+	public List<User> getAllUsers(){
+		return userDAOService.getAllUsers();
+	}
+
+	@GetMapping("/users/{userId}")
+	public User getOneUser(@PathVariable int userId) {
+		return userDAOService.getUser(userId);
+	}
+	
+	@PostMapping("/users")
+	public void createUser(@RequestBody User user) {
+		User savedUSer=userDAOService.saveUser(user);
+		System.out.println("Saved user"+savedUSer);
+	}
+	
+	@PostMapping("/usersv2")
+	public void createUserResponseCode(@RequestBody User user) {
+		User savedUSer=userDAOService.saveUser(user);
+		System.out.println("Saved user"+savedUSer);
+	}
+}

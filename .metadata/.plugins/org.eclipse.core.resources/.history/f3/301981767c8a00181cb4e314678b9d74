@@ -1,0 +1,5 @@
+package com.training.mappers;
+
+public class EmployeeMapper {
+
+}

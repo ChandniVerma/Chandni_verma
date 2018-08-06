@@ -1,0 +1,8 @@
+package com.training.employee;
+
+public class Client {
+	public static void main(String[] args) {
+		
+	}
+
+}

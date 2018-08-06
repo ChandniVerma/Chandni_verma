@@ -1,0 +1,25 @@
+package com.training.springbasics;
+
+public class HelloClient {
+	
+
+	public static void main(String[] args) {
+		
+		
+	//	XmlBeanFactory  factory = new XmlBeanFactory(new ClassPathResource("spring-content.xml"));
+		
+		
+		ApplicationContext factory = new ClassPathXmlApplicationContext("spring-content.xml");
+		
+		
+		HelloService helloService = (HelloService) factory.getBean("defaultHello");
+		
+		System.out.println(helloService.sayHello());
+		
+		
+	}
+
+}
+
+
+}

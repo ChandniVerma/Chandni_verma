@@ -1,0 +1,95 @@
+package com.training.exilant.restfulworks.user1;
+
+import java.net.URI;
+import java.nio.file.attribute.UserPrincipalNotFoundException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.Resource;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import com.training.exilant.restfulworks.exception.UserNotFoundException;
+
+@RestController
+public class UserResource {
+	
+	@Autowired
+	private UserDAOService userDAOService;
+	
+	
+	@GetMapping("/users")
+	public List<User> getAllUsers(){
+		return userDAOService.getAllUsers();
+	}
+
+	@GetMapping("/users/{userId}")
+	public User getOneUser(@PathVariable int userId) {
+		
+		User getUser=userDAOService.getUser(userId);
+		if(getUser==null) {
+			throw new UserNotFoundException("id  " +userId);
+		}
+		
+		return getUser;
+	}
+	
+	
+	
+	@GetMapping("/users/{userId}")
+	public User getOneUserV2(@PathVariable int userId) {
+		
+		User getUser=userDAOService.getUser(userId);
+		if(getUser==null) {
+			throw new UserNotFoundException("id  " +userId);
+		}
+		
+		//give the link for getting all the use with meta data "all-users"
+		// SERVER-PATH +"/users"
+		
+		Resource<User> resource=new Resource<User>(getUser)
+		return getUser;
+	}
+	
+	
+	
+	
+	@PostMapping("/users")
+	public void createUser(@RequestBody User user) {
+		User savedUSer=userDAOService.saveUser(user);
+		System.out.println("Saved user"+savedUSer);
+	}
+	
+	@PostMapping("/usersv2")
+	public ResponseEntity<Object> createUserResponseCode(@RequestBody User user) {
+		
+		User savedUSer=userDAOService.saveUser(user);
+		URI location=ServletUriComponentsBuilder.fromCurrentRequest().path("/{userId}").buildAndExpand(savedUSer.getUserId()).toUri();
+		
+		return ResponseEntity.created(location).build();
+		//System.out.println("Saved user"+savedUSer);
+	}
+	
+	@DeleteMapping(path="/usersd/{userId}")
+	public User deleteById(@PathVariable int userId) {
+	 return userDAOService.deleteUser(userId);
+		
+	 }
+	@PostMapping(path="/usersu/{userId}/{name}")
+	public User updateById(@PathVariable int userId , @PathVariable String name) {
+		
+		System.out.println("HELLLLLLL"+userId);
+	 return userDAOService.updateUser(userId, name);
+		
+	 }
+	}
+

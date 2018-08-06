@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   
+	   <bean id="camera" class="com.trainings.autowire.Camera">
+	   <property name="type" value="vga"></property>
+	    </bean>
+	   
+	    <bean id="screen" class="com.trainings.autowire.Screen">
+	   <property name="glassType" value="tuffen"></property>
+	   <property name="len" value="5"></property>
+	   <property name="bre" value="3"></property>
+	    </bean>
+	   
+	   <bean id="speaker" class="com.trainings.autowire.Speaker">
+	   <property name="type" value="mono"></property>
+	   <property name="vollevels" value="10"></property>
+	   
+	   </bean>
+	   
+	   <bean id="mobile" class="com.trainings.autowire.Mobile">
+	   <property name="camera" ref="camera"></property>
+	   <property name="screen" ref="screen"></property>
+	    <property name="speaker" ref="speaker"></property>
+	   
+	   </bean>
+	  
+	   </beans>

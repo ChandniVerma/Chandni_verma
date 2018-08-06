@@ -1,0 +1,17 @@
+package com.training.aop.banking;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+public class LoggingAspect {
+	
+	//this will scan for any package n any class
+	//@Before("execution(public String getAccName())")
+	@Before("execution(public com.training.aop.banking) ")
+	public void loggingAdviceBefore() {
+		System.out.println("*******Logginf Before Called*********");
+	}
+	
+	
+}

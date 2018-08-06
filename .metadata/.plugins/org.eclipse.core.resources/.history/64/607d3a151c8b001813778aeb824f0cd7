@@ -1,0 +1,22 @@
+package bankingClient;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.training.aop.service.BankingService;
+
+public class Client {
+	public static void main(String[] args) {
+		ApplicationContext applicationContext=new ClassPathXmlApplicationContext("Banking.xml");
+		
+		BankingService bankingService=(BankingService) applicationContext.getBean("banking");
+		System.out.println(bankingService.getSbAccount().getAcc().getAccName());
+		System.out.println(bankingService.getCaAccount().showBalance());
+		bankingService.getCaAccount().getOneParameter(10);
+		
+		
+		
+		
+	}
+
+}

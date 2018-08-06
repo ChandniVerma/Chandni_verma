@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd"
+    
+    default-init-method="ginit" default-destroy-method="gdestroy">
+    
+    <!-- when initialization happens spring will look if any class here implements
+    BeanPostProcessor if so then it will invoke that class methods before n after -->
+      
+<bean class="com.training.bpp.EmployeeBeanProcessor"></bean>
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<property name="Location" value="employeeinfo.properties"></property>
+
+</bean>
+<bean id="d" class="com.training.employee.Employee" scope="singleton" >
+
+<!--  autoboxing is taken care by spring  -->
+
+
+<property name="empId" value="${employee.empid}"></property>
+<property name="empName" value="${employee.empname}"></property>
+<property name="empSal" value="${employee.empsal}"></property>
+</bean>
+
+
+
+
+
+
+
+</beans>

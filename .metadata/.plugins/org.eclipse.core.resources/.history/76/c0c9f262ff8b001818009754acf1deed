@@ -1,0 +1,5 @@
+spring.application.name=currency-service
+
+currency-service.inr=69
+currency-service.usd=1
+

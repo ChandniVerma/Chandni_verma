@@ -1,0 +1,8 @@
+package com.trainings.autowire;
+
+public class Mobile {
+	private Camera camera;
+	private Speaker speaker;
+	private Screen screen;
+
+}

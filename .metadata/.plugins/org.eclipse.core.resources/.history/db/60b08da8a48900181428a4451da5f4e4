@@ -1,0 +1,21 @@
+package com.training.bpp;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
+//since this class can handle any class 
+public class EmployeeBeanProcessor implements BeanPostProcessor{
+
+	@Override
+	public Object postProcessBeforeInitialization(Object arg0, String beanName) throws BeansException {
+		System.out.println("******POSTPROCESSORBEFOREINITI");
+		return arg0;
+	}
+
+	@Override
+	public Object postProcessAfterInitialization(Object arg1, String beanName) throws BeansException {
+		System.out.println("******POSTPROCESSORBEFOREINITI");
+		return arg1;
+	}
+
+}

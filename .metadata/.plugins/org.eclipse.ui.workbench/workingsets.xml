@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1531810010843_0" label="Java Main Sources" name="main">
+<item elementID="=SpringWorks/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=SpringWorks/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1531810010859_1" label="Java Test Sources" name="test"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1531991185202_3" label="restful-works" name="restful-works">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/restful-works" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1532077604322_4" label="currency-service" name="currency-service">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/currency-service" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1532080004039_5" label="spring-cloud-config-service" name="spring-cloud-config-service">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring-cloud-config-service" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1531810015963_2" label="Window Working Set" name="Aggregate for window 1531810015962"/>
+</workingSetManager>

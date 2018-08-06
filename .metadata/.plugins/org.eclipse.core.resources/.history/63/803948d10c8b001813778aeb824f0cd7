@@ -1,0 +1,10 @@
+package com.training.aop.model;
+
+public class Account {
+	private int accNo;
+	private String accName;
+	private double balance;
+	
+	
+
+}

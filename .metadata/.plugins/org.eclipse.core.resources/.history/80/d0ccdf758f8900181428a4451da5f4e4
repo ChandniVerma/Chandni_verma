@@ -1,0 +1,17 @@
+package com.training.hello;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+@Component
+public class AppConfig {
+	public Greeting englishGreet() {
+		@Bean(name="english")
+		return new GreetEnglish();
+	}
+
+	public Greeting frenchGreet() {
+		@Bean(name="french")
+		return new GreetFrench();
+	}
+}

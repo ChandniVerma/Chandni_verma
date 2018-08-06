@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   
+	   
+	   
+	    
+	   
+	   <bean id="speaker" class="com.trainings.autowire.Speaker">
+	   <property name="type" value="mono"></property>
+	   <property name="volLevels" value="10"></property>
+	   
+	   </bean>
+	   
+	   <bean id="mobile" class="com.trainings.autowire.Mobile">
+	   <property name="camera" ref="camera"></property>
+	   <property name="screen" ref="screen"></property>
+	    <property name="speaker" ref="speaker"></property>
+	   
+	   </bean>
+	  
+	   </beans>

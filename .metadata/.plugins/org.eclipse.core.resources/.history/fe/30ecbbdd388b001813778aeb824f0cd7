@@ -1,0 +1,28 @@
+package com.training.exilant.restfulworks;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class HelloWorld {
+	
+	private String message;
+	
+	public HelloWorld(String message) {
+		this.message=message;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	@Override
+	@GetMapping(path="/hello-world-bean")
+	public String toString() {
+		return "HelloWorld [message=" + message + "]";
+	}
+
+	
+}

@@ -1,0 +1,51 @@
+package com.training.exilant.restfulworks.user1;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class UserDAOService {
+	
+	//we are stimuldating the DB
+	// it is kept in the list
+	
+	private static List<User> users=new ArrayList<>();
+	int usersCount=1;
+	
+	static {
+		users.add(new User(101,"Rupa", new Date()));
+		users.add(new User(102,"Akshay", new Date()));
+		users.add(new User(103,"Tanmay", new Date()));
+	}
+
+	public List<User> getAllUsers(){
+		return users;
+	}
+	
+	public User saveUser(User user) {
+		if(user.getUserId()==null) {
+			
+			user.setUserId(++usersCount);
+			return user;
+		}
+		return null;
+	}
+	
+	public User getUser(int userId) {
+		for(User user:users) {
+			if(user.getUserId()==userId) {
+				return user;
+			}
+		}
+		return null;
+	}
+	
+	public User deleteUser(int userId) {
+		return null;
+	}
+	
+	public User updateUser(User userId) {
+		return null;
+	}
+	
+}
